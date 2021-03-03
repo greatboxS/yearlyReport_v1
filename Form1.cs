@@ -55,10 +55,15 @@ namespace YReport
                 return;
             }
 
+            if (string.IsNullOrEmpty(txtNamePrefix.Text))
+            {
+                MessageBox.Show("Please enter export name prefix.");
+                return;
+            }
 
             YearlyReportModel.ReportYear = year;
 
-            Task.Factory.StartNew(() => { YearlyReportModel.ExecutingReport(); });
+            Task.Factory.StartNew(() => { YearlyReportModel.ExecutingReport(txtNamePrefix.Text); });
         }
         private void btnExecute_Click(object sender, EventArgs e)
         {
@@ -123,7 +128,7 @@ namespace YReport
         {
             e.Handled = !(char.IsDigit((char)e.KeyCode) || e.KeyCode == Keys.Back || e.KeyCode == Keys.Enter);
 
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 ExecutingReport();
             }
@@ -149,6 +154,6 @@ namespace YReport
     }
 
     public delegate void ExecutingChanged(string message, object sender);
-    
+
 
 }

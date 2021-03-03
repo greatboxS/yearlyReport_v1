@@ -49,6 +49,8 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuOpenReportFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuRecentReportFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNamePrefix = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AppBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 103);
+            this.label2.Location = new System.Drawing.Point(12, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 1;
@@ -64,7 +66,7 @@
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(124, 99);
+            this.txtYear.Location = new System.Drawing.Point(50, 96);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(68, 20);
             this.txtYear.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             // txtTemplatePath
             // 
-            this.txtTemplatePath.Location = new System.Drawing.Point(124, 22);
+            this.txtTemplatePath.Location = new System.Drawing.Point(124, 19);
             this.txtTemplatePath.Name = "txtTemplatePath";
             this.txtTemplatePath.Size = new System.Drawing.Size(325, 20);
             this.txtTemplatePath.TabIndex = 4;
@@ -82,7 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 28);
+            this.label3.Location = new System.Drawing.Point(12, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 3;
@@ -90,7 +92,7 @@
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(455, 20);
+            this.btnBrowse.Location = new System.Drawing.Point(455, 17);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(39, 23);
             this.btnBrowse.TabIndex = 5;
@@ -100,7 +102,7 @@
             // 
             // btnExecute
             // 
-            this.btnExecute.Location = new System.Drawing.Point(216, 98);
+            this.btnExecute.Location = new System.Drawing.Point(419, 94);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(75, 23);
             this.btnExecute.TabIndex = 6;
@@ -110,7 +112,7 @@
             // 
             // btnMonthBrowse
             // 
-            this.btnMonthBrowse.Location = new System.Drawing.Point(455, 45);
+            this.btnMonthBrowse.Location = new System.Drawing.Point(455, 42);
             this.btnMonthBrowse.Name = "btnMonthBrowse";
             this.btnMonthBrowse.Size = new System.Drawing.Size(39, 23);
             this.btnMonthBrowse.TabIndex = 9;
@@ -120,7 +122,7 @@
             // 
             // txtMonthlyReportFolder
             // 
-            this.txtMonthlyReportFolder.Location = new System.Drawing.Point(124, 47);
+            this.txtMonthlyReportFolder.Location = new System.Drawing.Point(124, 44);
             this.txtMonthlyReportFolder.Name = "txtMonthlyReportFolder";
             this.txtMonthlyReportFolder.Size = new System.Drawing.Size(325, 20);
             this.txtMonthlyReportFolder.TabIndex = 8;
@@ -128,7 +130,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 53);
+            this.label4.Location = new System.Drawing.Point(12, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 7;
@@ -136,7 +138,7 @@
             // 
             // btnYearBrowse
             // 
-            this.btnYearBrowse.Location = new System.Drawing.Point(455, 70);
+            this.btnYearBrowse.Location = new System.Drawing.Point(455, 67);
             this.btnYearBrowse.Name = "btnYearBrowse";
             this.btnYearBrowse.Size = new System.Drawing.Size(39, 23);
             this.btnYearBrowse.TabIndex = 12;
@@ -146,7 +148,7 @@
             // 
             // txtYearlyReportFolder
             // 
-            this.txtYearlyReportFolder.Location = new System.Drawing.Point(124, 72);
+            this.txtYearlyReportFolder.Location = new System.Drawing.Point(124, 69);
             this.txtYearlyReportFolder.Name = "txtYearlyReportFolder";
             this.txtYearlyReportFolder.Size = new System.Drawing.Size(325, 20);
             this.txtYearlyReportFolder.TabIndex = 11;
@@ -154,7 +156,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 78);
+            this.label5.Location = new System.Drawing.Point(12, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 13);
             this.label5.TabIndex = 10;
@@ -214,11 +216,31 @@
             this.MenuRecentReportFile.Text = "Recent report file";
             this.MenuRecentReportFile.Click += new System.EventHandler(this.MenuRecentReportFile_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(135, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Export name prefix:";
+            // 
+            // txtNamePrefix
+            // 
+            this.txtNamePrefix.Location = new System.Drawing.Point(238, 96);
+            this.txtNamePrefix.Name = "txtNamePrefix";
+            this.txtNamePrefix.Size = new System.Drawing.Size(173, 20);
+            this.txtNamePrefix.TabIndex = 17;
+            this.txtNamePrefix.Text = "YearlyParameter";
+            this.txtNamePrefix.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 166);
+            this.Controls.Add(this.txtNamePrefix);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnYearBrowse);
@@ -269,6 +291,8 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuOpenReportFolder;
         private System.Windows.Forms.ToolStripMenuItem MenuRecentReportFile;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNamePrefix;
     }
 }
 

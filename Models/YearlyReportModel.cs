@@ -23,6 +23,7 @@ namespace YReport.Models
         public int YStartRow { get; set; }
         public int YStartCol { get; set; }
         public Control lbStatus { get; set; }
+        public string ExportNamePrefix { get; set; }
 
         public event ExecutingChanged ExecutingChanged;
 
@@ -44,7 +45,7 @@ namespace YReport.Models
                 foreach (var s in files)
                 {
                     string name = Path.GetFileName(s).ToLower();
-                    if (name.IndexOf(year.ToString()) > -1 && name.IndexOf("monthlyreport") > -1)
+                    if (name.IndexOf(year.ToString()) > -1 && name.IndexOf("monthly") > -1)
                     {
                         int month = 0;
                         int.TryParse(name.Substring(name.IndexOf("_") + 1, 2), out month);
@@ -57,8 +58,9 @@ namespace YReport.Models
             return MReportFiles;
         }
 
-        public int ExecutingReport()
+        public int ExecutingReport(string prefix)
         {
+            ExportNamePrefix = prefix;
             // If you use EPPlus in a noncommercial context
             // according to the Polyform Noncommercial license:
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -79,14 +81,12 @@ namespace YReport.Models
                 return -1;
             }
 
-            NewReportFile = Path.Combine(YearlyReportPath, $"YearlyReport_{ReportYear}.xlsm");
+            NewReportFile = Path.Combine(YearlyReportPath, $"{ExportNamePrefix}_{ReportYear}.xlsm");
 
             if (File.Exists(NewReportFile))
             {
                 File.Delete(NewReportFile);
                 lbStatus.SetPropertyThreadSafe(() => lbStatus.Text, "Delete old report file.");
-
-
             }
 
             lbStatus.SetPropertyThreadSafe(() => lbStatus.Text, "Copy new report file.");
