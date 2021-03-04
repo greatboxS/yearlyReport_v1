@@ -81,7 +81,7 @@ namespace YReport.Models
                 return -1;
             }
 
-            NewReportFile = Path.Combine(YearlyReportPath, $"{ExportNamePrefix}_{ReportYear}.xlsm");
+            NewReportFile = Path.Combine(YearlyReportPath, $"{ExportNamePrefix}_{ReportYear}{Path.GetExtension(TemplatePath)}");
 
             if (File.Exists(NewReportFile))
             {
