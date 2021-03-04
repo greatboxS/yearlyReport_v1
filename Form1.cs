@@ -93,6 +93,8 @@ namespace YReport
                 {
                     if (ExecutedYear.Contains(year))
                         return;
+
+                    ExecutedYear.Add(year);
                     Task.Factory.StartNew(() => { YearlyReportModel.ExecutingReport(year, prefix); });
                 }
             }

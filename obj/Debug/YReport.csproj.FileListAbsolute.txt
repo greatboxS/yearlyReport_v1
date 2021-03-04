@@ -13,3 +13,4 @@ D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csproj.CoreComp
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csproj.CopyComplete
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.exe
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.pdb
+D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csprojAssemblyReference.cache
