@@ -1,7 +1,3 @@
-D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.Form1.resources
-D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.Properties.Resources.resources
-D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csproj.GenerateResource.cache
-D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csproj.CoreCompileInputs.cache
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\bin\Debug\YReport.exe.config
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\bin\Debug\YReport.exe
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\bin\Debug\YReport.pdb
@@ -10,7 +6,10 @@ D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\bin\Debug\Microsoft.IO.Recyclable
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\bin\Debug\System.ComponentModel.Annotations.dll
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\bin\Debug\EPPlus.xml
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.Form1.resources
+D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.Properties.Resources.resources
+D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csproj.GenerateResource.cache
+D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csproj.CoreCompileInputs.cache
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csproj.CopyComplete
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.exe
 D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.pdb
-D:\vs_19\CSharp\2_Winform\YearlyReport\YReport\obj\Debug\YReport.csprojAssemblyReference.cache

@@ -58,8 +58,9 @@ namespace YReport.Models
             return MReportFiles;
         }
 
-        public int ExecutingReport(string prefix)
+        public int ExecutingReport(int year, string prefix)
         {
+            ReportYear = year;
             ExportNamePrefix = prefix;
             // If you use EPPlus in a noncommercial context
             // according to the Polyform Noncommercial license:
@@ -125,7 +126,6 @@ namespace YReport.Models
             }
 
             lbStatus.SetPropertyThreadSafe(() => lbStatus.Text, "Executing completed.");
-
 
             return 1;
         }

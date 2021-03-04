@@ -110,12 +110,72 @@ namespace YReport.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Setting {
+        public int ExecutedYear {
             get {
-                return ((int)(this["Setting"]));
+                return ((int)(this["ExecutedYear"]));
             }
             set {
-                this["Setting"] = value;
+                this["ExecutedYear"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
+        public int RMonth {
+            get {
+                return ((int)(this["RMonth"]));
+            }
+            set {
+                this["RMonth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("31")]
+        public int RDay {
+            get {
+                return ((int)(this["RDay"]));
+            }
+            set {
+                this["RDay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("23")]
+        public int RHour {
+            get {
+                return ((int)(this["RHour"]));
+            }
+            set {
+                this["RHour"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("59")]
+        public int RMin {
+            get {
+                return ((int)(this["RMin"]));
+            }
+            set {
+                this["RMin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public int RSec {
+            get {
+                return ((int)(this["RSec"]));
+            }
+            set {
+                this["RSec"] = value;
             }
         }
     }

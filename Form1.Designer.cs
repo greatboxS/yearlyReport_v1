@@ -43,7 +43,6 @@
             this.txtYearlyReportFolder = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.AppBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbStatus = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +50,7 @@
             this.MenuRecentReportFile = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNamePrefix = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.AppBindingSource)).BeginInit();
+            this.YearlyReportNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,6 +233,13 @@
             this.txtNamePrefix.Text = "YearlyParameter";
             this.txtNamePrefix.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // YearlyReportNotify
+            // 
+            this.YearlyReportNotify.Icon = ((System.Drawing.Icon)(resources.GetObject("YearlyReportNotify.Icon")));
+            this.YearlyReportNotify.Text = "YearlyReport";
+            this.YearlyReportNotify.Visible = true;
+            this.YearlyReportNotify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.YearlyReportNotify_MouseDoubleClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,7 +269,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yearly report";
-            ((System.ComponentModel.ISupportInitialize)(this.AppBindingSource)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -285,7 +291,6 @@
         private System.Windows.Forms.TextBox txtYearlyReportFolder;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.BindingSource AppBindingSource;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -293,6 +298,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuRecentReportFile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNamePrefix;
+        private System.Windows.Forms.NotifyIcon YearlyReportNotify;
     }
 }
 

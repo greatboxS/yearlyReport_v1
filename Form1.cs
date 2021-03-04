@@ -16,7 +16,11 @@ namespace YReport
     public partial class Form1 : Form
     {
         private YearlyReportModel YearlyReportModel { get; set; }
-
+        private Timer Timer = new Timer();
+        private List<int> ExecutedYear = new List<int>();
+        private int reportMonth, reportDay, reportHour, reportMin, reportSec;
+        private bool QuitApp = false;
+        private bool Show = false;
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +39,64 @@ namespace YReport
             txtYearlyReportFolder.Text = YearlyReportModel.YearlyReportPath;
 
             YearlyReportModel.lbStatus = lbStatus;
+            Timer.Interval = 500;
+            Timer.Tick += Timer_Tick;
+            Timer.Enabled = true;
+            Timer.Start();
 
+            reportMonth = Properties.Settings.Default.RMonth;
+            reportDay = Properties.Settings.Default.RDay;
+            reportHour = Properties.Settings.Default.RHour;
+            reportMin = Properties.Settings.Default.RMin;
+            reportSec = Properties.Settings.Default.RSec;
+
+            YearlyReportNotify.ContextMenu = new ContextMenu(new MenuItem[] {
+                new MenuItem("Show", ShowYearlyReportClick),
+                new MenuItem("Exit tool", OnExitToolClick)
+            });
+
+            YearlyReportNotify.Visible = true;
+        }
+
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            base.OnVisibleChanged(e);
+            this.Visible = Show;
+            Show = false;
+        }
+
+        private void ShowYearlyReportClick(object sender, EventArgs e)
+        {
+            Show = true;
+            this.Show();
+            this.BringToFront();
+            YearlyReportNotify.Visible = false;
+        }
+
+        private void OnExitToolClick(object sender, EventArgs e)
+        {
+            QuitApp = true;
+            Application.Exit();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                int year = DateTime.Now.Year;
+                string prefix = "YearlyParameter";
+                if (DateTime.Now.Month == reportMonth &&
+                    DateTime.Now.Day == reportDay &&
+                    DateTime.Now.Hour == reportHour &&
+                    DateTime.Now.Minute == reportMin &&
+                    DateTime.Now.Second == reportSec)
+                {
+                    if (ExecutedYear.Contains(year))
+                        return;
+                    Task.Factory.StartNew(() => { YearlyReportModel.ExecutingReport(year, prefix); });
+                }
+            }
+            catch { }
         }
 
         private void ExecutingReport()
@@ -61,9 +122,8 @@ namespace YReport
                 return;
             }
 
-            YearlyReportModel.ReportYear = year;
 
-            Task.Factory.StartNew(() => { YearlyReportModel.ExecutingReport(txtNamePrefix.Text); });
+            Task.Factory.StartNew(() => { YearlyReportModel.ExecutingReport(year, txtNamePrefix.Text); });
         }
         private void btnExecute_Click(object sender, EventArgs e)
         {
@@ -110,6 +170,24 @@ namespace YReport
                 Properties.Settings.Default.Save();
                 txtMonthlyReportFolder.Text = path;
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (QuitApp)
+                return;
+            
+            YearlyReportNotify.Visible = true;
+            Hide();
+            e.Cancel = true;
+        }
+
+        private void YearlyReportNotify_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            YearlyReportNotify.Visible = false;
+            this.BringToFront();
+            Show = true;
+            this.Show();
         }
 
         private void btnYearBrowse_Click(object sender, EventArgs e)
